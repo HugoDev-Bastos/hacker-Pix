@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Site de Jogos Hacker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #0f0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #111;
+            text-align: right;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(140, 245, 166, 0.5);
+        }
+
+        .navigation-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #111;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 0 10px rgba(140, 245, 166, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            animation: typing 3s steps(40), blink-caret 0.75s step-end infinite;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid green;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: green;
+            }
+        }
+
+        .header-icons {
+            display: flex;
+            align-items: center;
+            margin-right: 35px;
+        }
+
+        .header-icons a {
+            display: inline-block;
+            width: 35px; /* Dimensões menores */
+            height: 35px; /* Dimensões menores */
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .header-icons img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .banner {
+            width: 650px; /* Tamanho da imagem */
+            height: 300px; /* Tamanho da imagem */
+            align-items: center;
+            object-fit: cover;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid #0f0; /* Borda */
+            box-shadow: 0 0 10px rgba(140, 245, 166, 0.5); /* Shadow */
+        }
+
+        .icon-small {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        .content {
+            margin-top: 50px;
+            margin-left: 75px;
+            margin-right: 75px;
+            margin-bottom: 50px;
+            padding: 40px;
+            text-align: left;
+
+        }
+
+        .content h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .image-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(140, 245, 166, 0.5);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .image-box:hover img {
+            transform: scale(1.1);
+        }
+
+        .navigation-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #111;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 0 10px rgba(140, 245, 166, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-icon {
+            width: 25px;
+            height: 25px;
+            margin-bottom: 5px;
+        }
+
+        .nav-text {
+            color: #0f0;
+        }
+
+        .navigation-bar button {
+            background-color: transparent;
+            border: none;
+            color: #0f0;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const textElement = document.querySelector(".header h1");
+            const text = "Seja Bem Vindo H@cker";
+            let i = 0;
+
+            function typeEffect() {
+                if (i < text.length) {
+                    textElement.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeEffect, 100);
+                }
+            }
+
+            typeEffect();
+        });
+    </script>
+</head>
+<body>
+
+    <header class="header">
+        <h1></h1>
+        <div class="header-icons">
+            <a href="#">
+                <img src="imgs/email.png" alt="Ícone de E-mail">
+            </a>
+            <a href="#">
+                <img src="imgs/logout.png" alt="Ícone de Log-out">
+            </a>
+        </div>
+    </header>
+
+    <div class="content">
+
+        <img class="banner" src="imgs/pix em dolar.png" alt="Banner do Site">
+        <h3>
+        <img class="icon-small" src="imgs/email.png" alt="Ícone Pequeno"> 
+        Jogos Disponíveis
+        </h3>
+
+        <div class="image-grid">
+            <div class="image-box">
+                <a href="pagina_jogo1.html">
+                    <img src="imgs/mines.jpg" alt="Jogo 1">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo2.html">
+                    <img src="imgs/crash.jpg" alt="Jogo 2">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo3.html">
+                    <img src="imgs/aviator.jpg" alt="Jogo 3">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo4.html">
+                    <img src="imgs/double.png" alt="Jogo 4">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo4.html">
+                    <img src="imgs/jetx.jpg" alt="Jogo 4">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo4.html">
+                    <img src="imgs/penalty.jpg" alt="Jogo 4">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo4.html">
+                    <img src="imgs/spaceman.jpg" alt="Jogo 4">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo4.html">
+                    <img src="imgs/bacdo.jpg" alt="Jogo 4">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo4.html">
+                    <img src="imgs/fortune.jpg" alt="Jogo 4">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo4.html">
+                    <img src="imgs/fortune-rabbit.jpg" alt="Jogo 4">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo4.html">
+                    <img src="imgs/dragon-tiger-luck.png" alt="Jogo 4">
+                </a>
+            </div>
+            <div class="image-box">
+                <a href="pagina_jogo4.html">
+                    <img src="imgs/hotline.png" alt="Jogo 4">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation-bar">
+        <button>
+            <img class="nav-icon" src="imgs/casa.png" alt="Ícone de Navegação">
+            <div class="nav-text">Inico</div>
+        </button>
+        <button>
+            <img class="nav-icon" src="imgs/estrela.png" alt="Ícone de Navegação">
+            <div class="nav-text">Bonús</div>
+        </button>
+        <button>
+            <img class="nav-icon" src="imgs/mais.png" alt="Ícone de Navegação">
+            <div class="nav-text">Outros</div>
+        </button>
+    </div>
+</body>
+</html>
